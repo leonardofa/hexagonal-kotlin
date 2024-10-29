@@ -1,6 +1,6 @@
-package br.com.leonardo.estudos.hexagonal.infrastructure.client
+package br.com.leonardo.estudos.hexagonal.infrastructure.adapters.out.client
 
-import br.com.leonardo.estudos.hexagonal.infrastructure.client.response.AddressResponse
+import br.com.leonardo.estudos.hexagonal.infrastructure.adapters.out.client.response.AddressResponse
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable

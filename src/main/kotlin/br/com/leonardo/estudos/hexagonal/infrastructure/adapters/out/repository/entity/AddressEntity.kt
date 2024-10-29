@@ -1,4 +1,4 @@
-package br.com.leonardo.estudos.hexagonal.infrastructure.repository.entity
+package br.com.leonardo.estudos.hexagonal.infrastructure.adapters.out.repository.entity
 
 import br.com.leonardo.estudos.hexagonal.application.core.domain.Address
 

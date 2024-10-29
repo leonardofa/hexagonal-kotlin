@@ -1,4 +1,4 @@
-package br.com.leonardo.estudos.hexagonal.infrastructure.client.response
+package br.com.leonardo.estudos.hexagonal.infrastructure.adapters.out.client.response
 
 import br.com.leonardo.estudos.hexagonal.application.core.domain.Address
 
