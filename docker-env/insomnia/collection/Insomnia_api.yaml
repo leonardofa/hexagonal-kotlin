@@ -1,0 +1,148 @@
+_type: export
+__export_format: 4
+__export_date: 2024-10-29T18:21:23.049Z
+__export_source: insomnia.desktop.app:v10.1.1
+resources:
+  - _id: req_1b316d4fe9cf462e844ea019ff4e10ad
+    parentId: wrk_4c556b946d684e9ba69e7548fc93997b
+    modified: 1730032852714
+    created: 1729892547836
+    url: http://localhost:8080/api/v1/customers
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "{% faker 'randomFullName' %}",
+        	"cpf": "{% faker 'randomInt' %}",
+        	"zipCode": "0000000000000001"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.1.1
+    authentication: {}
+    metaSortKey: -1729892547836
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_4c556b946d684e9ba69e7548fc93997b
+    parentId: null
+    modified: 1729892542338
+    created: 1729892542338
+    name: Customer
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_aae2d747ffbc4808a5aea6e7ba5f2f7c
+    parentId: wrk_4c556b946d684e9ba69e7548fc93997b
+    modified: 1729956845409
+    created: 1729895991881
+    url: http://localhost:8080/api/v1/customers/{% prompt 'Customer Id', '', '', '',
+      false, true %}
+    name: findById
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.1
+    authentication: {}
+    metaSortKey: -1729892400726.375
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_50a902b9e9eb45d5a9f75fac384c87f1
+    parentId: wrk_4c556b946d684e9ba69e7548fc93997b
+    modified: 1729957803987
+    created: 1729899141516
+    url: http://localhost:8080/api/v1/customers/{% prompt 'Customer Id', '',
+      '671d0c4306b4643e33fef6b2', '', false, true %}
+    name: update
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Leonardo Ferreira Alves",
+        	"cpf": "123",
+        	"zipCode": "5591819771270477"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.1.1
+    authentication: {}
+    metaSortKey: -1729892253616.75
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a2ae45f8e32d4b20b85ee1a45c5b4bc9
+    parentId: wrk_4c556b946d684e9ba69e7548fc93997b
+    modified: 1729956864955
+    created: 1729956857854
+    url: http://localhost:8080/api/v1/customers/{% prompt 'Customer Id', '', '', '',
+      false, true %}
+    name: delete
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.1
+    authentication: {}
+    metaSortKey: -1729891812287.875
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_d839b4f513d9c6f3282182b5b0fb1a28d9da9f7e
+    parentId: wrk_4c556b946d684e9ba69e7548fc93997b
+    modified: 1729892542340
+    created: 1729892542340
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1729892542340
+    _type: environment
+  - _id: jar_d839b4f513d9c6f3282182b5b0fb1a28d9da9f7e
+    parentId: wrk_4c556b946d684e9ba69e7548fc93997b
+    modified: 1729892542341
+    created: 1729892542341
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar

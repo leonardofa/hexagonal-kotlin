@@ -1,0 +1,162 @@
+_type: export
+__export_format: 4
+__export_date: 2024-10-27T12:24:01.390Z
+__export_source: insomnia.desktop.app:v10.1.1
+resources:
+  - _id: req_11a29171481e49c4949ab0e0a1e6cf13
+    parentId: wrk_b6e322d8328d435da3fb1677da674c83
+    modified: 1730031693773
+    created: 1729891370959
+    url: http://localhost:8082/__admin
+    name: mappings-get-all
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.1
+    authentication: {}
+    metaSortKey: -1729891370959
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_b6e322d8328d435da3fb1677da674c83
+    parentId: null
+    modified: 1729891358131
+    created: 1729891358131
+    name: Wiremock
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_1caf84dae41a473e9c79075fda745118
+    parentId: wrk_b6e322d8328d435da3fb1677da674c83
+    modified: 1730031710105
+    created: 1729891906115
+    url: http://localhost:8082/__admin/mappings
+    name: mapping-add
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"request": {
+        		"method": "GET",
+        		"url": "/addresses/{% faker 'randomInt' %}"
+        	},
+        	"response": {
+        		"status": 200,
+        		"headers": {
+        			"Content-Type": "application/json"
+        		},
+        		"jsonBody": {
+        			"street": "{% faker 'randomStreetName' %}",
+        			"city": "{% faker 'randomCity' %}",
+        			"state": "{% faker 'randomCountry' %}"
+        		}
+        	}
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.1.1
+    authentication: {}
+    metaSortKey: -1729891370934
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_65b0f0f49087448f966dd0660fcd75e3
+    parentId: wrk_b6e322d8328d435da3fb1677da674c83
+    modified: 1730031734445
+    created: 1729954407139
+    url: http://localhost:8082/__admin/mappings/:id
+    name: mapping-delete-one
+    description: ""
+    method: DELETE
+    body: {}
+    parameters:
+      - id: pair_c056676a534c496a8d981fba44db38ee
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.1
+    authentication: {}
+    metaSortKey: -1729891370921.5
+    isPrivate: false
+    pathParameters:
+      - name: id
+        value: "{% prompt 'mapping-id', '', '', '', false, true %}"
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_0c3efa4deb0f47c79ccb2287cd490230
+    parentId: wrk_b6e322d8328d435da3fb1677da674c83
+    modified: 1730031757360
+    created: 1729891495801
+    url: http://localhost:8082/addresses/:zipCode
+    name: address-get-one
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_c056676a534c496a8d981fba44db38ee
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/10.1.1
+    authentication: {}
+    metaSortKey: -1729891370909
+    isPrivate: false
+    pathParameters:
+      - name: zipCode
+        value: "{% prompt 'ZipCode', '', '', '', false, true %}"
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_ed110db7e37b27f953b20693490889cda10ee59a
+    parentId: wrk_b6e322d8328d435da3fb1677da674c83
+    modified: 1729891358133
+    created: 1729891358133
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1729891358133
+    _type: environment
+  - _id: jar_ed110db7e37b27f953b20693490889cda10ee59a
+    parentId: wrk_b6e322d8328d435da3fb1677da674c83
+    modified: 1729891358134
+    created: 1729891358134
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar

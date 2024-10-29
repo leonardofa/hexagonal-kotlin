@@ -1,7 +1,7 @@
 {
     "request": {
         "method": "GET",
-        "url": "/addresses/38400000"
+        "url": "/addresses/0000000000000001"
     },
     "response": {
         "status": 200,
@@ -9,9 +9,9 @@
             "Content-Type": "application/json"
         },
         "jsonBody": {
-            "street": "Rua Hexagonal",
-            "city": "Uberlândia",
-            "state": "Minas Gerais"
+            "street": "street",
+            "city": "city",
+            "state": "state"
         }
     }
 }

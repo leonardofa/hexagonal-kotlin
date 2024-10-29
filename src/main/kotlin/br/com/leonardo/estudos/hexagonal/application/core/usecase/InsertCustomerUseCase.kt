@@ -4,17 +4,20 @@ import br.com.leonardo.estudos.hexagonal.application.core.domain.Customer
 import br.com.leonardo.estudos.hexagonal.application.ports.`in`.InsertCustomerInputPort
 import br.com.leonardo.estudos.hexagonal.application.ports.out.FindAddressByZipCodeOutputPort
 import br.com.leonardo.estudos.hexagonal.application.ports.out.InsertCustomerOutputPort
+import br.com.leonardo.estudos.hexagonal.application.ports.out.SendCpfForValidationOutputPort
 
 class InsertCustomerUseCase(
     private val findAddressByZipCodeOutputPort: FindAddressByZipCodeOutputPort,
-    private val insertCustomerOutputPort: InsertCustomerOutputPort
+    private val insertCustomerOutputPort: InsertCustomerOutputPort,
+    private val sendCpfForValidationOutputPort: SendCpfForValidationOutputPort
 ) : InsertCustomerInputPort {
 
-    override fun execute(customer: Customer, zipCode: String) {
+    override fun execute(customer: Customer, zipCode: String): Customer {
         customer.apply {
             address = findAddressByZipCodeOutputPort.execute(zipCode);
         }.let {
-            insertCustomerOutputPort.execute(it);
+            sendCpfForValidationOutputPort.execute(it.cpf)
+            return insertCustomerOutputPort.execute(it);
         }
     }
 }

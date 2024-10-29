@@ -4,6 +4,6 @@ import br.com.leonardo.estudos.hexagonal.application.core.domain.Customer
 
 interface InsertCustomerInputPort {
 
-    fun execute(customer: Customer, zipCode: String)
+    fun execute(customer: Customer, zipCode: String): Customer
 
 }
