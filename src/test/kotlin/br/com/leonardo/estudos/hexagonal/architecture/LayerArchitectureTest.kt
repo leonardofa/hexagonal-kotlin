@@ -21,4 +21,5 @@ class LayerArchitectureTest {
         .whereLayer("PortsIn").mayOnlyBeAccessedByLayers("UseCase", "AdaptersIn")
         .whereLayer("PortsOut").mayOnlyBeAccessedByLayers("UseCase", "AdaptersOut")
         .whereLayer("Config").mayNotBeAccessedByAnyLayer()
+    
 }
