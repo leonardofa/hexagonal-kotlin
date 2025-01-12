@@ -1,5 +1,11 @@
 version: "3.1"
 services:
+  rabbitmq:
+    image: rabbitmq:4-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     networks:
