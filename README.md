@@ -1,5 +1,7 @@
 # Estudo de arquitetura hexagonal + kotlin + kafka
 
+![img.png](img_2.png)
+
 ## Requerimentos para o ambiente:
 - JDK 21
 - Docker
